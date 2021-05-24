@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<title> My Account</title> 
+    <br><br>
+    <div class="list-type5">
+        <ol>
+          <h1 style="color: darkcyan; font-family: 'Acme', sans-serif;;">Account Info</h1>
+        <li><h2>Name:{{ current_user.username }}</h2></li>
+        <li><h2>Email:{{ current_user.email }}</h2></li>
+    
+</ol>
+</div>
+{% endblock content %}

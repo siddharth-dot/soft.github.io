@@ -1,0 +1,533 @@
+<html>
+    <head>
+        <title>Input data page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+            body{
+                background-color: rgba(0,136,169,0.05);
+                color: #24252A;
+            }
+
+            *{
+                font-family: "Montserrat", sans-serif;
+            }
+
+            header{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                background-color: #24252A;
+            }
+
+            li, a, button{
+                font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                color: #edf0f1;
+                text-decoration: none;
+            }
+
+            header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px 10%;
+            }
+
+            .logo{
+                cursor: pointer;
+            }
+
+            .nav__links{
+                list-style: none;
+            }
+
+            .nav__links li{
+                display: inline-block;
+                padding: 0 20px;
+            }
+
+            .nav__links li a{
+                transition: all 0.3s ease 0s;
+            }
+
+            .nav__links li a:hover{
+                color: #0088a9;
+            }
+
+            button{
+                padding: 9px 25px;
+                background-color: rgba(0,136,169,1);
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+
+            button:hover{
+                background-color: rgba(0,136,169,0.8);
+            }
+
+            .form-rounded{
+                border-radius: 1rem;
+            }
+
+            form > button{
+                margin: auto;
+                display: block;
+            }
+
+            .carousel-control-prev-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+            }
+
+            .carousel-control-next-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+            }
+
+            p{
+                font-size: 20px;
+            }
+
+            .heading{
+                background: linear-gradient(rgba(36,37,42, .5), rgba(50, 0, 200, .5)), url('/static/images/landing.jpg');  background-repeat: no-repeat; background-position: 100% -22px;
+                height: 80vh;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            #chat,
+	    #chat:after,
+	    .chatbox {
+	        transition: all .4s ease-in-out
+	    }
+	    #chat,
+	    #close-chat,
+	    .minim-button,
+	    .maxi-button,
+	    .chat-text {
+	        font-weight: 700;
+	        cursor: pointer;
+	        font-family: Arial, sans-serif;
+	        text-align: center;
+	        height: 40px;
+	        line-height: 35px
+	    }
+	    .b-agent-demo_header {
+	        background-color:linear-gradient(to right, #00AAFF, #00FF6C);;
+	    }
+	    #chat,
+	    #close-chat,
+	    .chatbox {
+	        border: 1px solid #A8A8A8
+	    }
+	    #chat:after,
+	    #chat:before {
+	        position: absolute;
+	        border-style: solid;
+	        content: ""
+	    }
+	    .chatbox {
+	        border-radius: 10px;
+	        position: fixed;
+	        bottom: 15px;
+	        right: 15px;
+	        margin: 0 0 -1500px;
+	        background: darkcyan;
+	        padding: 28px 5px 5px;
+	        z-index: 100000;
+	        box-shadow: 0 0 15px 1px darkcyan
+	    }
+	    #close-chat {
+	        position: absolute;
+	        top: 2px;
+	        right: 2px;
+	        font-size: 24px;
+	        border: 1px solid #dedede;
+	        width: 40px;
+	        background: #fefefe;
+	        z-index: 2;
+	        border-radius: 25px;
+	    }
+	    #minim-chat,
+	    #maxi-chat {
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        height: 20px;
+	        line-height: 20px;
+	        cursor: pointer;
+	        z-index: 1
+	    }
+	    .minim-button {
+	        position: absolute;
+	        top: 2px;
+	        right: 46px;
+	        font-size: 24px;
+	        border: 1px solid #dedede;
+	        width: 40px;
+	        background: #fefefe;
+	        border-radius: 25px;
+	    }
+	    .maxi-button {
+	        position: absolute;
+	        top: 2px;
+	        right: 46px;
+	        font-size: 24px;
+	        border: 1px solid #dedede;
+	        width: 40px;
+	        background: #fefefe;
+	        border-radius: 25px;
+	    }
+	    .chat-text {
+	        position: absolute;
+	        top: 5px;
+	        left: 10px;
+	        font-size: 16px;
+	    }
+	    #chat {
+	        width: 45px;
+	        border-radius: 3px;
+	        padding: 2px 8px;
+	        font-size: 12px;
+	        background: linear-gradient(to right, #00AAFF, #00FF6C);
+	        -webkit-transform: translateZ(0);
+	        transform: translateZ(0) border-radius: 25px;
+	        position: fixed;
+	        bottom: 20px;
+	        right: 18px;
+	    }
+	    #chat:before {
+	        border-width: 10px 11px 0 0;
+	        border-color: #A8A8A8 transparent transparent;
+	        left: 7px;
+	        bottom: -10px
+	    }
+	    #chat:after {
+	        border-width: 10px 10px 0 0;
+	        border-color: #c62828 transparent transparent;
+	        left: 8px;
+	        bottom: -8px
+	    }
+	    #chat:hover {
+	        background: #ff5f52;
+	        -webkit-animation-name: hvr-pulse-grow;
+	        animation-name: hvr-pulse-grow;
+	        -webkit-animation-duration: .3s;
+	        animation-duration: .3s;
+	        -webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	        -webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	        -webkit-animation-direction: alternate;
+	        animation-direction: alternate
+	    }
+	    #chat:hover:after {
+	        border-color: #ef5350 transparent transparent!important
+	    }
+	    .animated-chat {
+	        -webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	        -webkit-animation-fill-mode: both;
+	        animation-fill-mode: both;
+	        -webkit-animation-timing-function: ease-in;
+	        animation-timing-function: ease-in
+	    }
+	    @-webkit-keyframes tada {
+	        0% {
+	            -webkit-transform: scale(1)
+	        }
+	        
+	        10%,
+	        20% {
+	            -webkit-transform: scale(.9)rotate(-3deg)
+	        }
+	        
+	        30%,
+	        50%,
+	        70%,
+	        90% {
+	            -webkit-transform: scale(1.1)rotate(3deg)
+	        }
+	        
+	        40%,
+	        60%,
+	        80% {
+	            -webkit-transform: scale(1.1)rotate(-3deg)
+	        }
+	        
+	        100% {
+	            -webkit-transform: scale(1)rotate(0)
+	        }
+	    }
+	    @keyframes tada {
+	        0% {
+	            transform: scale(1)
+	        }
+	        
+	        10%,
+	        20% {
+	            transform: scale(.9)rotate(-3deg)
+	        }
+	        
+	        30%,
+	        50%,
+	        70%,
+	        90% {
+	            transform: scale(1.1)rotate(3deg)
+	        }
+	        
+	        40%,
+	        60%,
+	        80% {
+	            transform: scale(1.1)rotate(-3deg)
+	        }
+	        
+	        100% {
+	            transform: scale(1)rotate(0)
+	        }
+	    }
+	    .tada {
+	        -webkit-animation-name: tada;
+	        animation-name: tada
+	    }
+	    @-webkit-keyframes hvr-pulse-grow {
+	        to {
+	            -webkit-transform: scale(1.1);
+	            transform: scale(1.1)
+	        }
+	    }
+	    @keyframes hvr-pulse-grow {
+	        to {
+	            -webkit-transform: scale(1.1);
+	            transform: scale(1.1)
+	        }
+	    }
+	    .b-agent-demo .b-agent-demo_header {
+	        min-height: 80px;
+	        height: 80px;
+	        overflow: hidden;
+	        position: fixed;
+	        top: 0;
+	        width: 100%;
+	        background-color: #ffeab7;
+	        display: table;
+	    }
+            /* header > img{
+                filter: brightness(75%) saturate(140%);
+
+            } */
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- <img class="logo" src="../../public/imgs/favicon.png" alt="logo"> -->
+            <img class="logo" src={{url_for('static', filename='medizin.png')}} alt="logo" style="width: 120px;">
+            <nav>
+                <ul class="nav__links">
+                    <!-- <li><a href="/home" class="font-weight-bold"><strong>MEDIZINE</strong></a></li> -->
+                    <li id="dec"><a href="/home">Home</a></li>
+                    <li><a href="{{ url_for('preview') }}">Overview</a></li>
+                    <li><a href="https://professional.diabetes.org/content-page/diabetes-support-directory" target="_blank">Sources</a></li>
+                    <li><a href="{{url_for('.home' ,_anchor='foo')}}">About</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-nav">
+                {% if current_user.is_authenticated %}
+                  <a class="nav-item nav-link" class="cta" href="{{ url_for('account') }}">Account</a>
+                  <a class="nav-item nav-link" class="cta" href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                <a href="https://www.covid19india.org/" target="_blank" class="cta"><button>Helpline</button></a>
+                {% endif %}
+              </div>
+            
+            
+        </header>
+        
+        <div class="shadow-lg" style="width: 80%; margin: 0 auto; background-color: white; padding: 20px 0;">
+            <div class="container">
+                <h1><strong><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a> Diabetes Early Signs and Symptoms in Women</strong></h1>
+                <main role="main" class="container">
+                <div class="row">
+                  <div class="col-md-8">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ categories }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    {% block content %}{% endblock %}
+                  </div>
+                <hr class="my-4">
+                <div>
+                        <p class="text-justify">Diabetes mellitus is a metabolic disorder that occurs when your blood sugar (glucose), is too high (hyperglycemia). Glucose is what the body uses for energy, and the pancreas produces a hormone called insulin that helps convert the glucose from the food you eat into energy. When the body does not produce enough insulin - or does not any at all - the glucose does not reach your cells to be used for energy. This results in type 1 and 2 diabetes.
+                            <div class="img-thumbnail bg-light" style="width: 400px; height: 100%; padding-bottom: 0; float: right; margin-left: 20px;">
+                                <a href={{url_for('static', filename='womandoctor.png')}}>
+                                    <img src={{url_for('static', filename='womandoctor.png')}} alt="Nature" style="width:100%">
+                                    <div class="caption">
+                                      <p style="color: black; margin: 10px; font-size: 16px;" class="text-justify">Diabetes is a great example whereby, giving the patient the tools, you can manage yourself very well.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </p>
+                        <p class="text-justify">
+                            According to the CDC, 30 million (9.4% of the US population), and 7.2 million Americans don't know that they have diabetes.</p>
+                        <p class="text-justify font-weight-bold">There are two types of diabetes:</p>
+                        <ul style="padding: 0;">
+                        <li style="color: #24252A;"><p class="text-justify"><strong>Type 1 diabetes</strong> is an autoimmune condition in which the body does not produce insulin because the body's immune system attacks insulin-producing cells from the pancreas called beta cells.</p></li>
+                        <li style="color: #24252A;"><p class="text-justify"><strong>Type 2 diabetes</strong> is a condition in which cells cannot use blood sugar (glucose) efficiently for energy. This occurs when blood sugar gets too high over time, and the cells become insensitive to insulin.</p></li>
+                        </ul>
+                        <p class="text-justify"> If a person does not change their diet and lifestyle, prediabetes can become type 2 diabetes within 5 years.
+                            Here is our <mark style="background-color: rgba(0, 136, 169,0.25);">diabetes prediction algorithm</mark> for females who are vulnerable to it:
+                        </p>
+                </div>
+                <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+                <form action=" " method="POST">
+                    <div class="form-group">
+                        <fieldset disabled>
+                            <label for="userID">UserID</label>
+                            <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
+                        </fieldset>
+                      </div>
+                    <div class="form-group">
+                      <label for="Name">Name</label>
+                      <input type="text" class="form-control form-rounded" id="Name" aria-describedby="Help" placeholder="Enter Name" name="name">
+                      <small id="Help" class="form-text text-muted">We'll never share your details with anyone else.</small>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="Pregnancies">Pregnancies</label>
+                                <input type="number" class="form-control form-rounded" id="Pregnancies" placeholder="120" name="pregnancies">
+                              </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="Glucose">Glucose</label>
+                                <input type="number" class="form-control form-rounded" id="Glucose" placeholder="120" name="glucose">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="BloodPressure">Blood Pressure</label>
+                                <input type="number" class="form-control form-rounded" id="BloodPressure" placeholder="120" name="bp">
+                              </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="SkinThickness">Skin Thickness</label>
+                                <input type="number" class="form-control form-rounded" id="SkinThickness" placeholder="120" name="skinthickness">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="Insulin">Insulin</label>
+                                <input type="number" class="form-control form-rounded" id="Insulin" placeholder="120" name="insulin">
+                              </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="BMI">BMI</label>
+                                <input type="number" class="form-control form-rounded" id="BMI" placeholder="120" name="bmi">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="DPF">Diabetes Pedigree Function</label>
+                                <input type="number" class="form-control form-rounded" id="DPF" placeholder="120" name="dpf">
+                              </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="Age">Age</label>
+                                <input type="number" class="form-control form-rounded" id="Age" placeholder="120" name="age">
+                              </div>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="CM">Classification Model</label>  
+                        <select id="CM" class="custom-select form-rounded" name="model">
+                            <option selected><=====Select Classification Model=====></option>
+                            <option value="1">Logistic Regression</option>
+                            <option value="2">K-Nearest Neighbors</option>
+                            <option value="3">Support Vector Machine</option>
+                            <option value="5">Naive Bayes</option>
+                            <option value="6">Decision Tree Classification</option>
+                            <option value="7">Random Forest Classification</option>
+                          </select>
+                      </div>            
+                   <button type="submit" id="submitForm">Submit</button>
+                  </form>
+                  </div>
+            </div>
+        </div>
+        <!-- bot -->
+        <div id="preloader" style="opacity: 0; display: none; background-color: #ffeab7;">
+            <noscript>
+                &lt;h1&gt;This application does'not work without javascript&lt;/h1&gt;
+            </noscript>
+            <div class="logo"></div>
+        </div>
+
+        <div id="chat" class="animated-chat tada" style="border-radius: 25px" onclick="loadChatbox()">
+            <div style="color: white">Chat with us</div>
+        </div>
+        <div class="chatbox" id="chatbox">
+            <!-- 
+        <span class="chat-text">Chatting Yuk!</span> -->
+            <script>
+                //<![CDATA[
+                document.write('<div id="smartchatbox_img901621879" style="width: 340px; height: 450px; overflow: hidden; margin: auto; padding: 0;">');
+                document.write('<div id="smartchatbox901621879" style="width: 340px; height: 450px; overflow: hidden; margin: auto; padding: 0; border:0; ">');
+                document.write('<iframe allow="microphone;" width="350" height="430"src="https://console.dialogflow.com/api-client/demo/embedded/8767b716-b26f-4f76-92f1-c839b681199a"></iframe>');
+                document.write('</iframe></div></div>');
+				
+                //]]>
+            </script>
+            <div id="close-chat" onclick="closeChatbox()">&times;</div>
+            <div id="minim-chat" onclick="minimChatbox()"><span class="minim-button">&minus;</span></div>
+            <div id="maxi-chat" onclick="loadChatbox()"><span class="maxi-button">&plus;</span></div>
+        </div>
+
+        <script>
+            //<![CDATA[
+            function loadChatbox() {
+                var e = document.getElementById("minim-chat");
+                e.style.display = "block";
+                var e = document.getElementById("maxi-chat");
+                e.style.display = "none";
+                var e = document.getElementById("chatbox");
+                e.style.margin = "0";
+            }
+
+            function closeChatbox() {
+                var e = document.getElementById("chatbox");
+                e.style.margin = "0 0 -1500px 0";
+            }
+
+            function minimChatbox() {
+                var e = document.getElementById("minim-chat");
+                e.style.display = "none";
+                var e = document.getElementById("maxi-chat");
+                e.style.display = "block";
+                var e = document.getElementById("chatbox");
+                e.style.margin = "0 0 -460px 0";
+            }
+            //]]>
+        </script>
+        <!-- bot end -->
+    </body>
+</html>
